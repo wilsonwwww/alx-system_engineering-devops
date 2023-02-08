@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -name "*.html" -type f -exec sh -c 'for file do if [ ! -f "../$file" ]; then cp "$file" "../$file"; elif [ "$file" -nt "../$file" ]; then cp "$file" "../$file"; fi; done' sh {} +
+cp $(find . -type f -name ".html" -newer ..)
